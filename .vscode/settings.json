@@ -1,5 +1,7 @@
 {
     "Lua.diagnostics.globals": [
-        "kong"
+        "kong",
+        "utils_Set",
+        "_set"
     ]
 }
