@@ -13,10 +13,12 @@ local schema = {
         -- The 'config' record is the custom part of the plugin schema
         type = "record",
         fields = {
-          http_status_code = {
-            type = "string",
-            default = "200"
-          }
+          {
+              http_status_code = {
+              type = "string",
+              default = "200"
+            },
+          },
         },
         entity_checks = {
         },
