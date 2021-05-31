@@ -20,8 +20,12 @@ local schema = {
           },
           {
             http_status_code = {
-            type = "integer",
+            type = "number",
             default = 200,
+            between = {
+              100,
+              599
+            }
           },
         },
         },
