@@ -16,7 +16,10 @@ local schema = {
           {
               api_exceptions = {
                 type = "array",
-                default = {}
+                default = {},
+                elements = {
+                  type = "string",
+                }
             },
           },
           {
