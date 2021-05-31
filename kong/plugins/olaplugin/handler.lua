@@ -11,7 +11,6 @@
 ---------------------------------------------------------------------------------------------
 
 
-
 local plugin = {
   PRIORITY = 1000, -- set the plugin priority, which determines plugin execution order
   VERSION = "0.1",
@@ -67,6 +66,7 @@ function plugin:access(plugin_conf)
 
   -- your custom code here
   kong.log.debug("saying hello from the 'access' handler")
+  kong.log.debug("kong.router.get_route() : " .. kong.request.get_path())
   return kong.response.exit(plugin_conf.http_status_code, "Success Short Circuit")
   -- kong.log.inspect(plugin_conf)   -- check the logs for a pretty-printed config!
   -- kong.service.request.set_header(plugin_conf.request_header, "this is on a request")

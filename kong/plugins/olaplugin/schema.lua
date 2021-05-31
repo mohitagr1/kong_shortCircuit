@@ -14,8 +14,9 @@ local schema = {
         type = "record",
         fields = {
           {
-              message = {
-              type = "string",
+              api_exceptions = {
+                type = "array",
+                default = {}
             },
           },
           {
