@@ -79,7 +79,7 @@ function plugin:access(plugin_conf)
 
   local path = kong.request.get_path()
 
-  if _set[path] then
+  if not _set[path] then
     return kong.response.exit(plugin_conf.http_status_code, "Short Circuit the request as " .. path .. "is not noe of api_exceptions")
   end
   -- kong.log.inspect(plugin_conf)   -- check the logs for a pretty-printed config!
