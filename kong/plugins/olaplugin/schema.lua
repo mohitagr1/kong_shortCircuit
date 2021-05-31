@@ -14,11 +14,16 @@ local schema = {
         type = "record",
         fields = {
           {
-              http_status_code = {
+              message = {
               type = "string",
-              default = "200"
             },
           },
+          {
+            http_status_code = {
+            type = "integer",
+            default = 200,
+          },
+        },
         },
         entity_checks = {
         },
