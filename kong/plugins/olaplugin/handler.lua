@@ -30,7 +30,7 @@ local plugin = {
 function plugin:init_worker()
 
   -- your custom code here
-  kong.log.debug("saying hi from the 'init_worker' handler")
+  kong.log.debug("saying hello from the 'init_worker' handler")
 
 end --]]
 
@@ -66,19 +66,21 @@ end --]]
 function plugin:access(plugin_conf)
 
   -- your custom code here
-  kong.log.inspect(plugin_conf)   -- check the logs for a pretty-printed config!
-  kong.service.request.set_header(plugin_conf.request_header, "this is on a request")
+  kong.log.debug("saying hello from the 'access' handler")
+  return kong.response.exit(200, "Success Short Circuit")
+  -- kong.log.inspect(plugin_conf)   -- check the logs for a pretty-printed config!
+  -- kong.service.request.set_header(plugin_conf.request_header, "this is on a request")
 
 end --]]
 
 
 -- runs in the 'header_filter_by_lua_block'
-function plugin:header_filter(plugin_conf)
+-- function plugin:header_filter(plugin_conf)
 
-  -- your custom code here, for example;
-  kong.response.set_header(plugin_conf.response_header, "this is on the response")
+--   -- your custom code here, for example;
+--   kong.response.set_header(plugin_conf.response_header, "this is on the response")
 
-end --]]
+-- end --]]
 
 
 --[[ runs in the 'body_filter_by_lua_block'
